@@ -74,13 +74,5 @@ class _EligibilityCardState extends State<_EligibilityCard> {
      
      ],
   ]))); }
-  // Future<void> _fuelDialog(BuildContext context, int vehicleId) async {
-  //   final quantity=TextEditingController(); final employee=TextEditingController(); final notes=TextEditingController(); FuelType type=FuelType.gasoline95;
-  //   await showDialog(context: context, builder: (dialogContext) => StatefulBuilder(builder: (context, setLocal) => AlertDialog(title: const Text('تسجيل تعبئة'), content: SingleChildScrollView(child: Column(mainAxisSize: MainAxisSize.min, children: [
-  //     DropdownButtonFormField<FuelType>(initialValue: type, items: FuelType.values.map((e)=>DropdownMenuItem(value:e,child:Text(e.label))).toList(), onChanged:(v)=>setLocal(()=>type=v!)), const SizedBox(height:8),
-  //     TextField(controller: quantity, keyboardType: const TextInputType.numberWithOptions(decimal:true), decoration: const InputDecoration(labelText:'الكمية باللتر')), const SizedBox(height:8),
-  //     TextField(controller: employee, decoration: const InputDecoration(labelText:'اسم الموظف')), const SizedBox(height:8),
-  //     TextField(controller: notes, decoration: const InputDecoration(labelText:'ملاحظات')),
-  //   ])), actions:[TextButton(onPressed:()=>Navigator.pop(dialogContext),child:const Text('إلغاء')),FilledButton(onPressed:(){ final q=double.tryParse(quantity.text); if(q==null)return; Navigator.pop(dialogContext); context.read<VehicleBloc>().add(FuelingSaved(vehicleId:vehicleId,type:type,quantity:q,employee:employee.text,notes:notes.text));},child:const Text('حفظ'))])));
-  // }
+
 }
