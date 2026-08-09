@@ -1,5 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:injectable/injectable.dart';
 
 import '../../domain/entities/dashboard_summary.dart';
 import '../../domain/usecases/gas_station_usecases.dart';
@@ -8,6 +9,7 @@ sealed class DashboardEvent extends Equatable {
   const DashboardEvent();
   @override List<Object?> get props => [];
 }
+@injectable
 class DashboardStarted extends DashboardEvent {}
 class DashboardRefreshed extends DashboardEvent {}
 

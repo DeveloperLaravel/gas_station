@@ -13,7 +13,7 @@ class DashboardPage extends StatelessWidget {
     appBar: AppBar(title: const Text('محطة البنزين'), actions: [IconButton(onPressed: () => context.pushNamed(RouteNames.transactions), icon: const Icon(Icons.receipt_long))]),
     floatingActionButton: FloatingActionButton.extended(
       onPressed: () async { await context.pushNamed(RouteNames.vehicle); if (context.mounted) context.read<DashboardBloc>().add(DashboardRefreshed()); },
-      icon: const Icon(Icons.search), label: const Text('فحص سيارة'),
+      icon: const Icon(Icons.search), label: const Text('تسجيل تعبئة'),
     ),
     body: BlocBuilder<DashboardBloc, DashboardState>(builder: (context, state) {
       if (state is DashboardLoading || state is DashboardInitial) return const Center(child: CircularProgressIndicator());

@@ -1,10 +1,12 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:injectable/injectable.dart';
 
 import '../../../domain/entities/fuel_transaction.dart';
 import '../../../domain/usecases/gas_station_usecases.dart';
 import 'vehicle_event.dart';
 import 'vehicle_state.dart';
 
+@injectable
 class VehicleBloc extends Bloc<VehicleEvent, VehicleState> {
   VehicleBloc(
     this._find,
