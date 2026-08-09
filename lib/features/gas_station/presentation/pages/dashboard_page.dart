@@ -10,7 +10,15 @@ import '../widgets/transaction_tile.dart';
 class DashboardPage extends StatelessWidget {
   const DashboardPage({super.key});
   @override Widget build(BuildContext context) => Scaffold(
-    appBar: AppBar(title: const Text('محطة البنزين'), actions: [IconButton(onPressed: () => context.pushNamed(RouteNames.transactions), icon: const Icon(Icons.receipt_long))]),
+    appBar: AppBar(
+      leading: Padding(
+    padding: const EdgeInsets.all(8),
+    child: Image.asset(
+      'assets/images/2.png',
+      fit: BoxFit.contain,
+    ),
+  ),
+      title: const Text('محطة البنزين'), actions: [IconButton(onPressed: () => context.pushNamed(RouteNames.transactions), icon: const Icon(Icons.receipt_long))]),
     floatingActionButton: FloatingActionButton.extended(
       onPressed: () async { await context.pushNamed(RouteNames.vehicle); if (context.mounted) context.read<DashboardBloc>().add(DashboardRefreshed()); },
       icon: const Icon(Icons.search), label: const Text('تسجيل تعبئة'),

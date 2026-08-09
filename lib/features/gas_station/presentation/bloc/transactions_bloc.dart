@@ -5,11 +5,11 @@ import '../../domain/entities/fuel_transaction.dart';
 import '../../domain/usecases/gas_station_usecases.dart';
 
 sealed class TransactionsState extends Equatable { const TransactionsState(); @override List<Object?> get props => []; }
-@injectable
 class TransactionsLoading extends TransactionsState {}
 class TransactionsLoaded extends TransactionsState { const TransactionsLoaded(this.items); final List<FuelTransaction> items; @override List<Object?> get props => [items]; }
 class TransactionsFailure extends TransactionsState { const TransactionsFailure(this.message); final String message; @override List<Object?> get props => [message]; }
 
+@injectable
 class TransactionsCubit extends Cubit<TransactionsState> {
   TransactionsCubit(this._get) : super(TransactionsLoading());
   final GetTransactionsUsecase _get;

@@ -1,5 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:injectable/injectable.dart';
 
 import '../../features/gas_station/presentation/bloc/dashboard_bloc.dart';
 import '../../features/gas_station/presentation/bloc/transactions_bloc.dart';
@@ -17,6 +18,7 @@ abstract final class RouteNames {
   static const qr = 'qr';
 }
 
+@lazySingleton
 class AppRouter {
   late final GoRouter router = GoRouter(
     initialLocation: '/',

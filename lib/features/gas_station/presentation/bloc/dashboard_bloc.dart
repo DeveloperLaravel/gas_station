@@ -9,7 +9,6 @@ sealed class DashboardEvent extends Equatable {
   const DashboardEvent();
   @override List<Object?> get props => [];
 }
-@injectable
 class DashboardStarted extends DashboardEvent {}
 class DashboardRefreshed extends DashboardEvent {}
 
@@ -30,6 +29,7 @@ class DashboardFailure extends DashboardState {
   @override List<Object?> get props => [message];
 }
 
+@injectable
 class DashboardBloc extends Bloc<DashboardEvent, DashboardState> {
   DashboardBloc(this._getDashboard) : super(DashboardInitial()) {
     on<DashboardStarted>(_load);
